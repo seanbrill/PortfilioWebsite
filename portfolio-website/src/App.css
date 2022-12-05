@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  background-color: var(--primary-color);
+  font-family: rubik !important;
+  transition: color 0.3s linear;
+  transition: background-color 0.3s linear;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+body::-webkit-scrollbar{
+  display: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
 }
 
-.App-link {
-  color: #61dafb;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--tertiary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tertiary-color);
 }
+
+
+@font-face {
+  font-family: 'rubik';
+  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf');
+}
+
+
+
