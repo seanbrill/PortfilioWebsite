@@ -5,13 +5,15 @@
     opacity: 1;
     z-index: 10;
     box-shadow: 0px 0px 10px 0px var(--secondary-color);
-    max-height: 66px;
+    max-height: 100px;
+    height: 100px;
     width: 100%;
 }
 
 .nav-container{
     padding: 5px;
-
+    padding-bottom: 10px;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -19,20 +21,27 @@
 }
 
 .nav-shelf{
+    border-top: 1px solid var(--tertiary-color);
     padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     max-height: 0px;
     overflow: hidden !important;
     display: flex;
     flex-direction: column;
     width: 100% !important;
-    transition: max-height 0.6s ease-in-out;
+    margin-top: -15px;
+    transition: all 0.6s ease-in-out;
     background-color: var(--primary-color);
-    align-items: baseline;
-
+    align-items: flex-start;
+    overflow: hidden;
+    padding-left: 10px;
+    box-shadow: 0px 10px 10px 0px var(--tertiary-color);
 }
 
 .nav-shelf .nav-link{
     margin-bottom: 10px;
+    margin-left: 0px;
 
 }
 
@@ -50,8 +59,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     padding: 1px;
     border-radius: 10px;
     border: 2px solid var(--tertiary-color);
@@ -63,17 +72,18 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-top: 15px;
 }
 
 .title-name{
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-color);
     margin: 0;
     margin-bottom: 2px;
 }
 
 .title-position{
-    font-size: 12px;
+    font-size: 15px;
     color: var(--secondary-color);
     margin: 0;
 }
@@ -99,6 +109,7 @@
     position: relative !important;
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 20px;
     color: var(--text-color);
   }
   .nav-link:after {
@@ -131,8 +142,8 @@
 .theme-button{
     border: 2px solid var(--tertiary-color);
     padding: 5px;
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -147,15 +158,15 @@
 
 .theme-button:hover{
     cursor: pointer;
-    background-color: rgb(211, 208, 208);
+    background-color: var(--tertiary-color);
     border: 3px solid var(--secondary-color);
 }
 
 
 .nav-toggle{
     border: 2px solid var(--tertiary-color);
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     border-radius: 10px;
     background-color: transparent;
     display: flex;
@@ -163,7 +174,8 @@
     justify-content: center;
     transition: all 0.3s linear;
     cursor: pointer;
-    overflow: hidden;
+    overflow: hidden !important;
+    
 }
 
 .nav-toggle:hover{
@@ -171,7 +183,8 @@
 }
 
 .nav-toggle-brgr{
-    width: 22px;
+    width: 30px;
+    min-width: 22px;
     height: 3px;
     border-radius: 2px;
     background: var(--text-color);
@@ -181,7 +194,8 @@
 .nav-toggle-brgr::before,.nav-toggle-brgr::after{
     content: '';
     background: var(--text-color);
-    width: 22px;
+    width: 30px;
+    max-width: 30px;
     height: 3px;
     border-radius: 2px;
     display: flex;
@@ -220,6 +234,14 @@
     margin-right: 20px;
 }
 
+
+@media screen and (min-width: 601px) {
+    .nav-shelf{
+        display: none;
+    }
+}
+
+
 @media screen and (max-width: 600px) {
     .links-section{
         display: none;
@@ -227,4 +249,5 @@
     .responsive-links{
         display: flex;
     }
+
 }

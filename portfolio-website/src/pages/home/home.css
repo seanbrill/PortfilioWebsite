@@ -1,3 +1,7 @@
+.home-page-container{
+    padding-top: 50px;
+}
+
 .emphasis{
     color: var(--tertiary-color);
     font-weight: bold;
@@ -48,7 +52,7 @@
     width: 300px;
     margin-right: 10px;
     border-radius: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--headshot-background-color);
     opacity: 0.8;
     
 }
@@ -160,7 +164,7 @@
 
 .exp-title-container img{
     padding: 5px;
-    background-color: var(--tertiary-color);
+    background-color: var(--expertise-icon-background-color);
     border-radius: 5px;
     position: relative;
     width: auto;

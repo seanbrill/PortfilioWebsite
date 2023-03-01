@@ -30,14 +30,19 @@ function App() {
     switch(theme){
       case 'light':
         r.style.setProperty('--primary-color', '#ffffff');
+        r.style.setProperty('--headshot-background-color','#313232');
         r.style.setProperty('--secondary-color', '#589ce6');
         r.style.setProperty('--tertiary-color', '#857e76');
+        r.style.setProperty('--expertise-icon-background-color',"#589ce6");
         r.style.setProperty('--text-color', '#000');
         break;
       case 'dark':
         r.style.setProperty('--primary-color', '#202026');
         r.style.setProperty('--secondary-color', '#ffffff');
+        r.style.setProperty('--headshot-background-color','#ffffff');
         r.style.setProperty('--tertiary-color', '#6255d1');
+        r.style.setProperty('--expertise-icon-background-color',"#6255d1");
+
         r.style.setProperty('--text-color', '#dddddd');
         break;
     }

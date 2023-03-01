@@ -16,9 +16,13 @@ function Navbar(){
         if(navOpen){
             console.log('open');
             document.querySelector('#nav-shelf').style.maxHeight = '200px';
+            document.querySelector('#nav-shelf').style.paddingTop = '20px';
+            document.querySelector('#nav-shelf').style.paddingBottom = '20px';
         }else{
             console.log('closed');
             document.querySelector('#nav-shelf').style.maxHeight = '0px';
+            document.querySelector('#nav-shelf').style.paddingTop = '0px';
+            document.querySelector('#nav-shelf').style.paddingBottom = '0px';
         }
 
     },[navOpen]);
@@ -62,7 +66,6 @@ function Navbar(){
                 </div>
                 <a className="nav-link active">About Me</a>
                 <a className="nav-link">Projects</a>
-                <a className="nav-link">Blog</a>  
             </section>
 
             <section className="responsive-links">
@@ -76,7 +79,6 @@ function Navbar(){
         <section id="nav-shelf" className="nav-shelf">
                 <a className="nav-link active">About Me</a>
                 <a className="nav-link">Projects</a>
-                <a className="nav-link">Blog</a> 
                 <div className="theme-button"  onClick={toggleTheme}>
                     {theme == 'light' ?
                     <img className="theme-image" src={moon} alt="Dark Theme" />
