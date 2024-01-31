@@ -1,0 +1,40 @@
+{
+  "light": {
+    "primary": "#ffffff",
+    "secondary": "#589ce6",
+    "tertiary": "#589ce6",
+    "navbar": "#000000",
+    "headerBackground": "var(--primary)",
+    "aboutBackground": "#000000",
+    "aboutHeader": "#ffffff",
+    "aboutText": "#ffffff",
+    "logoBorder": "#ffffff",
+    "navNameText": "#ffffff",
+    "navPositionText": "#589ce6",
+    "themeButtonBorder": "#ffffff",
+    "themeButtonHover": "#589ce6",
+    "photoBorder": "#000000",
+    "textPrimary": "#000000",
+    "textSecondary": "#000",
+    "textTertiary": "#000"
+  },
+  "dark": {
+    "primary": "#202026",
+    "secondary": "#ffffff",
+    "tertiary": "#6255d1",
+    "navbar": "#202026",
+    "headerBackground": "linear-gradient(90deg, var(--secondary), var(--primary))",
+    "aboutBackground": "var(--primary)",
+    "aboutHeader": "#ffffff",
+    "aboutText": "#ffffff",
+    "logoBorder": "#ffffff",
+    "navNameText": "#ffffff",
+    "navPositionText": "#6255d1",
+    "themeButtonBorder": "#ffffff",
+    "themeButtonHover": "#589ce6",
+    "photoBorder": "#6255d1",
+    "textPrimary": "#ffffff",
+    "textSecondary": "#000",
+    "textTertiary": "#000"
+  }
+}

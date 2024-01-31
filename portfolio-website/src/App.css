@@ -1,14 +1,14 @@
-body{
+body {
   margin: 0;
-  background-color: var(--primary-color);
-  font-family: rubik !important;
-  transition: color 0.3s linear;
-  transition: background-color 0.3s linear;
+  background-color: var(--primary);
+  font-family: BebasNeue !important;
+  transition: color 0.2s linear;
+  transition: background-color 0.3s linear !important;
 }
 
 
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none !important;
 }
 
@@ -18,17 +18,17 @@ body::-webkit-scrollbar{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--primary-color);
+  background: var(--primary);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--tertiary-color);
+  background: var(--tertiary);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--tertiary-color);
+  background: var(--tertiary);
 }
 
 
@@ -37,5 +37,7 @@ body::-webkit-scrollbar{
   src: url('./assets/fonts/Rubik-VariableFont_wght.ttf');
 }
 
-
-
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./assets/fonts/BebasNeue-Regular.ttf');
+}

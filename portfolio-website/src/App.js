@@ -4,6 +4,7 @@ import Home from "./pages/home/home";
 import ThemeContext from "./context/ThemeContext";
 import { useEffect, useState } from "react";
 import "./App.css";
+import themes from "./themes/themes.json";
 
 function App() {
   const [initialLoad, setInitialLoad] = useState(true);
@@ -25,28 +26,26 @@ function App() {
 
   function updateSiteTheme() {
     var r = document.querySelector(":root");
-    switch (theme) {
-      case "light":
-        r.style.setProperty("--primary-color", "#eae2e2");
-        r.style.setProperty("--headshot-background-color", "#313232");
-        r.style.setProperty("--secondary-color", "#589ce6");
-        r.style.setProperty("--tertiary-color", "#857e76");
-        r.style.setProperty("--expertise-icon-background-color", "#589ce6");
-        r.style.setProperty("--text-color", "#000");
-        break;
-      case "dark":
-        r.style.setProperty("--primary-color", "#202026");
-        r.style.setProperty("--secondary-color", "#ffffff");
-        r.style.setProperty("--headshot-background-color", "#ffffff");
-        r.style.setProperty("--tertiary-color", "#6255d1");
-        r.style.setProperty("--expertise-icon-background-color", "#6255d1");
-
-        r.style.setProperty("--text-color", "#dddddd");
-        break;
-    }
+    let colors = themes[theme];
+    r.style.setProperty("--primary", colors.primary);
+    r.style.setProperty("--secondary", colors.secondary);
+    r.style.setProperty("--tertiary", colors.tertiary);
+    r.style.setProperty("--navbar", colors.navbar);
+    r.style.setProperty("--header-background", colors.headerBackground);
+    r.style.setProperty("--about-background", colors.aboutBackground);
+    r.style.setProperty("--about-header", colors.aboutHeader);
+    r.style.setProperty("--about-text", colors.aboutText);
+    r.style.setProperty("--logo-border", colors.logoBorder);
+    r.style.setProperty("--nav-name-text", colors.navNameText);
+    r.style.setProperty("--nav-position-text", colors.navPositionText);
+    r.style.setProperty("--theme-button-border", colors.themeButtonBorder);
+    r.style.setProperty("--theme-button-hover", colors.themeButtonHover);
+    r.style.setProperty("--photo-border", colors.photoBorder);
+    r.style.setProperty("--text-primary", colors.textPrimary);
+    r.style.setProperty("--text-secondary", colors.textSecondary);
+    r.style.setProperty("--text-tertiary", colors.textTertiary);
     //save theme in local storage
     if (!initialLoad) {
-      console.log("saving theme preference: " + theme);
       localStorage.setItem("theme", theme);
     }
   }
