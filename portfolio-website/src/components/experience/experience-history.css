@@ -1,0 +1,81 @@
+.experience-outer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    color: var(--resume-text);
+}
+
+.graph-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1px;
+    margin-top: 5px;
+}
+
+.graph-point {
+    height: 25px;
+    width: 25px;
+    min-height: 25px;
+    max-height: 25px;
+    min-width: 25px;
+    max-width: 25px;
+    border-radius: 100%;
+    background-color: var(--experience-graph-color);
+}
+
+.graph-body {
+    width: 2px;
+    background-color: var(--experience-graph-color);
+}
+
+.experience-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+.experience-main-heading {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.experience-sub-heading {
+    margin: 0;
+    margin-top: -5px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.experience-intro {}
+
+.experience-details-list {
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+    font-size: 14px;
+    font-family: 'rubik';
+}
+
+
+.experience-time-text {
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+    display: block;
+    transform: rotate(90);
+    transform: rotate(270deg);
+    top: 50%;
+    left: -8px;
+    text-align: center;
+    white-space: nowrap;
+}

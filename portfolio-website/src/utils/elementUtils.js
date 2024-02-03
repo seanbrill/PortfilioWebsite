@@ -1,6 +1,8 @@
 export function fadeOut(element, timeMs, opacityLevel, callback) {
   if (!element) return;
-  element.animate([{ opacity: opacityLevel ? opacityLevel : 1 }, { opacity: 0 }], { duration: timeMs });
+  element.animate([{ opacity: opacityLevel ? opacityLevel : 1 }, { opacity: 0 }], {
+    duration: timeMs,
+  });
   setTimeout(() => {
     element.style.display = "none";
     if (callback) callback();
@@ -10,14 +12,23 @@ export function fadeOut(element, timeMs, opacityLevel, callback) {
 export function fadeIn(element, timeMs, opacityLevel, displayType, callback) {
   if (!element) return;
   element.style.display = displayType ? displayType : "flex";
-  element.animate([{ opacity: 0 }, { opacity: opacityLevel ? opacityLevel : 1 }], { duration: timeMs });
+  element.animate([{ opacity: 0 }, { opacity: opacityLevel ? opacityLevel : 1 }], {
+    duration: timeMs,
+  });
   setTimeout(() => {
     element.style.opacity = opacityLevel ? opacityLevel.toString() : "1";
     if (callback) callback();
   }, timeMs - 1);
 }
 
-export function moveElement(element, timeMs, startPosition = { top: 0, left: 0, right: 0, bottom: 0 }, endPosition = { top: 0, left: 0, right: 0, bottom: 0 }, callback, callbackDelay = 500) {
+export function moveElement(
+  element,
+  timeMs,
+  startPosition = { top: 0, left: 0, right: 0, bottom: 0 },
+  endPosition = { top: 0, left: 0, right: 0, bottom: 0 },
+  callback,
+  callbackDelay = 0
+) {
   if (!element) return;
 
   // Create an options object for the animate method
@@ -27,10 +38,14 @@ export function moveElement(element, timeMs, startPosition = { top: 0, left: 0, 
   };
 
   // Check and apply animations for each property
-  if (endPosition.top !== startPosition.top) element.animate([{ top: startPosition.top }, { top: endPosition.top }], options);
-  if (endPosition.left !== startPosition.left) element.animate([{ left: startPosition.left }, { left: endPosition.left }], options);
-  if (endPosition.right !== startPosition.right) element.animate([{ right: startPosition.right }, { right: endPosition.right }], options);
-  if (endPosition.bottom !== startPosition.bottom) element.animate([{ bottom: startPosition.bottom }, { bottom: endPosition.bottom }], options);
+  if (endPosition.top !== startPosition.top)
+    element.animate([{ top: startPosition.top }, { top: endPosition.top }], options);
+  if (endPosition.left !== startPosition.left)
+    element.animate([{ left: startPosition.left }, { left: endPosition.left }], options);
+  if (endPosition.right !== startPosition.right)
+    element.animate([{ right: startPosition.right }, { right: endPosition.right }], options);
+  if (endPosition.bottom !== startPosition.bottom)
+    element.animate([{ bottom: startPosition.bottom }, { bottom: endPosition.bottom }], options);
 
   // Set a timeout to apply final styles and execute the callback
   setTimeout(() => {

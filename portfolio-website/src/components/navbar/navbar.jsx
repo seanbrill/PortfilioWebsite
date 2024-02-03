@@ -53,13 +53,16 @@ function Navbar() {
         </section>
 
         <section className="links-section">
-          <div className="theme-button" onClick={toggleTheme}>
-            {theme == "light" ? <img className="theme-image" src={moon} alt="Dark Theme" /> : <img className="theme-image" src={sun} alt="Light Theme" />}
-          </div>
-          {/* 
-          <a className="nav-link active">About Me</a>
+          <a className="nav-link">About Me</a>
+          <a className="nav-link">Experience</a>
           <a className="nav-link">Projects</a>
-          */}
+          <div className="theme-button" onClick={toggleTheme}>
+            {theme == "light" ? (
+              <img className="theme-image" src={moon} alt="Dark Theme" />
+            ) : (
+              <img className="theme-image" src={sun} alt="Light Theme" />
+            )}
+          </div>
         </section>
 
         <section className="responsive-links">
@@ -74,11 +77,15 @@ function Navbar() {
         <a className="nav-link active">About Me</a>
         <a className="nav-link">Projects</a>
         */}
-        
+
         <a className="nav-link">Links Coming Soon</a>
 
         <div className="theme-button" onClick={toggleTheme}>
-          {theme == "light" ? <img className="theme-image" src={moon} alt="Dark Theme" /> : <img className="theme-image" src={sun} alt="Light Theme" />}
+          {theme == "light" ? (
+            <img className="theme-image" src={moon} alt="Dark Theme" />
+          ) : (
+            <img className="theme-image" src={sun} alt="Light Theme" />
+          )}
         </div>
       </section>
     </nav>

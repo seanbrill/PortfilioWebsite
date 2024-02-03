@@ -8,6 +8,7 @@
     "aboutBackground": "#000000",
     "aboutHeader": "#ffffff",
     "aboutText": "#ffffff",
+    "resumeText": "#000000",
     "logoBorder": "#ffffff",
     "navNameText": "#ffffff",
     "navPositionText": "#589ce6",
@@ -16,7 +17,8 @@
     "photoBorder": "#000000",
     "textPrimary": "#000000",
     "textSecondary": "#000",
-    "textTertiary": "#000"
+    "textTertiary": "#000",
+    "experienceGraphColor": "#000000"
   },
   "dark": {
     "primary": "#202026",
@@ -24,9 +26,10 @@
     "tertiary": "#6255d1",
     "navbar": "#202026",
     "headerBackground": "linear-gradient(90deg, var(--secondary), var(--primary))",
-    "aboutBackground": "var(--primary)",
+    "aboutBackground": "#000000",
     "aboutHeader": "#ffffff",
     "aboutText": "#ffffff",
+    "resumeText": "#ffffff",
     "logoBorder": "#ffffff",
     "navNameText": "#ffffff",
     "navPositionText": "#6255d1",
@@ -35,6 +38,7 @@
     "photoBorder": "#6255d1",
     "textPrimary": "#ffffff",
     "textSecondary": "#000",
-    "textTertiary": "#000"
+    "textTertiary": "#000",
+    "experienceGraphColor": "#ffffff"
   }
 }

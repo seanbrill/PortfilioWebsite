@@ -5,6 +5,7 @@ import Header from "../../components/header/header";
 import "./home.css";
 import About from "../../components/about/about";
 import Resume from "../../components/resume/resume";
+import Projects from "../../components/projects/projects";
 
 function Home() {
   const [initialLoad, setInitialLoad] = useState(true);
@@ -22,6 +23,7 @@ function Home() {
       <Header initialLoad={initialLoad} />
       <About initialLoad={initialLoad} />
       <Resume initialLoad={initialLoad} />
+      <Projects initialLoad={initialLoad} />
     </div>
   );
 }

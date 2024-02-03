@@ -1,0 +1,19 @@
+#Projects {
+    background-color: #000000;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+
+.projects-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.projects-header {
+    color: var(--primary);
+    font-size: 45px;
+    margin-left: 25px;
+}

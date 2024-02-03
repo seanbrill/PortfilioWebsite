@@ -30,7 +30,7 @@ function Header(props) {
   async function HeaderAnimation() {
     let photo = document.querySelector("#photo");
     let bio = document.querySelector("#bio");
-    let fadeTime = 3000;
+    let fadeTime = 1500;
     let moveTime = 1500;
     //fade in elements
     elementUtils.fadeIn(photo, fadeTime / 2, 0, "flex");
@@ -99,16 +99,34 @@ function Header(props) {
         <img className="sean-image" src={seanPhoto} alt="an image of sean brill" />
       </div>
       <div id="bio">
-        <p>Experienced Full Stack Engineer with a degree in Information Sciences and Technology from Pennsylvania State University. Proficient in Node.js, React/TypeScript, and backend services, with a strong background in Data Structures and knowledge of XR and game development. Currently a Software Engineer II, showcasing consistent expertise in diverse technologies. Excited to apply skills to innovative software engineering projects.</p>
+        <p>
+          Experienced Full Stack Engineer with a degree in Information Sciences and Technology from
+          Pennsylvania State University. Proficient in Node.js, React/TypeScript, and backend
+          services, with a strong background in Data Structures and knowledge of XR and game
+          development. Currently a Software Engineer II, showcasing consistent expertise in diverse
+          technologies. Excited to apply skills to innovative software engineering projects.
+        </p>
         {/* quick links */}
         <section id="quick-buttons" className="quick-buttons-section">
-          <button id="linkedin-quick" className="quick-button" style={{ backgroundColor: theme === "light" ? "#136bc5" : "white" }}>
+          <button
+            id="linkedin-quick"
+            className="quick-button"
+            style={{ backgroundColor: theme === "light" ? "#136bc5" : "white" }}
+          >
             <img src={theme === "light" ? linkedinDark : linkedinLight} alt="Linkedin icon" />
           </button>
-          <button id="github-quick" className="quick-button" style={{ backgroundColor: theme === "light" ? "black" : "white" }}>
+          <button
+            id="github-quick"
+            className="quick-button"
+            style={{ backgroundColor: theme === "light" ? "black" : "white" }}
+          >
             <img src={theme === "light" ? githubDark : githubLight} alt="GitHub icon" />
           </button>
-          <button id="resume-quick" className="quick-button" style={{ backgroundColor: theme === "light" ? "darkgray" : "white" }}>
+          <button
+            id="resume-quick"
+            className="quick-button"
+            style={{ backgroundColor: theme === "light" ? "darkgray" : "white" }}
+          >
             <img src={theme === "light" ? resume_1_light_2 : resume_1} alt="Resume icon" />
           </button>
         </section>
