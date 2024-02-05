@@ -27,3 +27,11 @@ export function wait(ms) {
     }, ms);
   });
 }
+
+export function tryParse(text) {
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    return null;
+  }
+}

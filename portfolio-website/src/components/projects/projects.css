@@ -2,18 +2,39 @@
     background-color: #000000;
     min-height: 100vh;
     min-width: 100%;
+    padding-bottom: 150px;
 }
 
 
 .projects-container {
-    width: 100%;
+    width: auto;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+    padding-right: 25px;
 
+}
+
+
+.projects-grid {
+    display: grid;
+    row-gap: 25px;
+    column-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
 .projects-header {
     color: var(--primary);
     font-size: 45px;
-    margin-left: 25px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .projects-grid {
+        display: grid;
+        row-gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
 }

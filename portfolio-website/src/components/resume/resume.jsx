@@ -259,12 +259,12 @@ function Resume(props) {
             </div>
           </div>
           {/* Image */}
-          <div
+          {/* <div
             id="psu-image"
             style={{ backgroundImage: `url(${seanPSU2})` }}
             alt="sean psu"
             className="sean-psu"
-          ></div>
+          ></div> */}
         </section>
       </div>
     </section>

@@ -82,15 +82,15 @@ function Header(props) {
   }
 
   function Linkedin() {
-    window.open("https://www.linkedin.com/in/sean-brill-590752142/");
+    window.open(window.location.origin + "/linkedin", "_blank");
   }
 
   function Github() {
-    window.open("https://github.com/seanbrill");
+    window.open(window.location.origin + "/github", "_blank");
   }
 
   function Resume() {
-    //window.open(resume);
+    window.location.href = window.location.origin + "/resume";
   }
 
   return (
@@ -109,6 +109,7 @@ function Header(props) {
         {/* quick links */}
         <section id="quick-buttons" className="quick-buttons-section">
           <button
+            onClick={Linkedin}
             id="linkedin-quick"
             className="quick-button"
             style={{ backgroundColor: theme === "light" ? "#136bc5" : "white" }}
@@ -116,6 +117,7 @@ function Header(props) {
             <img src={theme === "light" ? linkedinDark : linkedinLight} alt="Linkedin icon" />
           </button>
           <button
+            onClick={Github}
             id="github-quick"
             className="quick-button"
             style={{ backgroundColor: theme === "light" ? "black" : "white" }}
@@ -123,6 +125,7 @@ function Header(props) {
             <img src={theme === "light" ? githubDark : githubLight} alt="GitHub icon" />
           </button>
           <button
+            onClick={Resume}
             id="resume-quick"
             className="quick-button"
             style={{ backgroundColor: theme === "light" ? "darkgray" : "white" }}
