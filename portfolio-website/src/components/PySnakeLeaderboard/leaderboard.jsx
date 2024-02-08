@@ -4,7 +4,7 @@ import "./leaderboard.css";
 
 function PySnakeLeaderboard(props) {
   const leaderboard_api_url =
-    "/api/GetLeaderboard?code=vXJK0waIlMK8zpls6ibRtP1tqJZt3F4-Qa6wRUNTLHmJAzFufclnrw==";
+    "https://pysnake.azurewebsites.net/api/GetLeaderboard?code=vXJK0waIlMK8zpls6ibRtP1tqJZt3F4-Qa6wRUNTLHmJAzFufclnrw==";
 
   const [leaderboard, setLeaderboard] = useState([]);
 
