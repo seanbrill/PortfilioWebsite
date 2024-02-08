@@ -14,13 +14,6 @@ function PySnakeLeaderboard(props) {
     }
   }, []);
 
-  function WindowsDownload() {
-    let a = document.createElement("a");
-    a.href = "./PySnake.zip";
-    a.download = "PySnake.zip";
-    a.click();
-  }
-
   function GetLeaderboard() {
     let request = new XMLHttpRequest();
     request.open("GET", leaderboard_api_url);
@@ -49,11 +42,6 @@ function PySnakeLeaderboard(props) {
     <section className="leaderboard-section">
       <h2 className="leaderboard-header">PySnake Live Leaderboard</h2>
       {formatLeaderboard()}
-      <section className="download-section">
-        <button onClick={WindowsDownload} className="download-button">
-          Windows Download
-        </button>
-      </section>
     </section>
   );
 }

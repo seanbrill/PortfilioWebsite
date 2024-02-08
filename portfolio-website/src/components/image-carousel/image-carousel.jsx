@@ -12,7 +12,6 @@ function ImageCarousel(props) {
   const isMoving = useRef(true);
   const animationTime = 550;
   useEffect(() => {
-    console.log("rendering");
     if (props.initialLoad) {
       isMoving.current = false;
       hideShade();
@@ -27,7 +26,6 @@ function ImageCarousel(props) {
         if (activeIndex > 0) {
           await genericUtils.wait(100);
           await ResetPositions();
-          console.log("positions reset");
         }
         hideShade();
       }, 100);
@@ -89,8 +87,6 @@ function ImageCarousel(props) {
           let left = parseFloat(rightImg.style.left);
           if (isNaN(left)) left = 0;
 
-          console.log("right from:", left);
-          console.log("right to:", -parseFloat(rect.width) + "px");
           elementUtils.moveElement(
             rightImg,
             animationTime,
@@ -113,8 +109,6 @@ function ImageCarousel(props) {
           let rect = middleImg.getBoundingClientRect();
           let left = parseFloat(middleImg.style.left);
           if (isNaN(left)) left = 0;
-          console.log("middle from:", left);
-          console.log("middle to:", -parseFloat(rect.width) + "px");
           elementUtils.moveElement(
             middleImg,
             animationTime,
@@ -156,8 +150,6 @@ function ImageCarousel(props) {
           let left = parseFloat(-rect.width);
           if (isNaN(left)) left = 0;
 
-          console.log("left from:", left);
-          console.log("left to:", parseFloat(rect.width) + "px");
           elementUtils.moveElement(
             leftImg,
             animationTime,
@@ -180,8 +172,6 @@ function ImageCarousel(props) {
           let rect = middleImg.getBoundingClientRect();
           let left = parseFloat(middleImg.style.left);
           if (isNaN(left)) left = 0;
-          console.log("middle from:", left);
-          console.log("middle to:", parseFloat(rect.width) + "px");
           elementUtils.moveElement(
             middleImg,
             animationTime,
@@ -218,6 +208,7 @@ function ImageCarousel(props) {
     <section id={props.id} className="image-carousel">
       {/* Previous Button */}
       <button
+        disabled={images.length <= 1}
         onClick={async () => {
           await previous();
         }}
@@ -228,10 +219,7 @@ function ImageCarousel(props) {
       <div id={props.id + "-viewport"} className="carousel-viewport">
         {/* Left Image */}
         {activeIndex > 0 ? (
-          <div
-            id={props.id + "-viewport-img-left"}
-            className="viewport-image-container offscreen-left"
-          >
+          <div id={props.id + "-viewport-img-left"} className="viewport-image-container offscreen-left">
             <img src={images[activeIndex - 1]} alt={props.alt} />
           </div>
         ) : null}
@@ -243,10 +231,7 @@ function ImageCarousel(props) {
         </div>
         {/* Right Image */}
         {activeIndex < images.length ? (
-          <div
-            id={props.id + "-viewport-img-right"}
-            className="viewport-image-container offscreen-right"
-          >
+          <div id={props.id + "-viewport-img-right"} className="viewport-image-container offscreen-right">
             <img src={images[activeIndex + 1]} alt={props.alt} />
           </div>
         ) : null}
@@ -254,6 +239,7 @@ function ImageCarousel(props) {
 
       {/* Next Button */}
       <button
+        disabled={images.length <= 1}
         onClick={async () => {
           await next();
         }}

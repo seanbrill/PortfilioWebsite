@@ -1,3 +1,11 @@
+#ResumePage {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    overflow: hidden;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
 iframe {
     padding-top: 100px;
     height: 100vh;

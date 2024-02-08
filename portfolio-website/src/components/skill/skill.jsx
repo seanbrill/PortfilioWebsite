@@ -12,7 +12,6 @@ function Skill(props) {
   }, [props.animateTrigger]);
 
   function Animate() {
-    console.log("animating skill: " + props.skillName);
     let skill = document.querySelector(`#${props.id}-outer`);
     fadeIn(skill, animationTime, 1, "flex");
     moveElement(skill, animationTime, { bottom: "-100px" }, { bottom: "0px" });

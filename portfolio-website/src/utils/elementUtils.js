@@ -123,7 +123,7 @@ export function observeNode(element, callback) {
   return observer;
 }
 
-export function onNodeVisible(element, callback) {
+export function onNodeVisible(element, callback, threshold = 0.05) {
   // Check if the IntersectionObserver is supported in the current environment
   if (typeof IntersectionObserver === "undefined") {
     console.error("IntersectionObserver is not supported in this environment.");
@@ -131,15 +131,18 @@ export function onNodeVisible(element, callback) {
   }
 
   // Create a new IntersectionObserver with a callback function
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      // Check if the target element is intersecting with the viewport
-      if (entry.isIntersecting) {
-        // Invoke the provided callback when the element becomes visible
-        callback(entry, observer);
-      }
-    });
-  });
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        // Check if the target element is intersecting with the viewport
+        if (entry.intersectionRatio >= threshold) {
+          // Invoke the provided callback when the element becomes visible
+          callback(entry, observer);
+        }
+      });
+    },
+    { threshold }
+  );
 
   // Start observing the target element
   observer.observe(element);

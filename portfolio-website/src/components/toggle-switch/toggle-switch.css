@@ -1,0 +1,33 @@
+.toggle-switch-outer {
+    padding: 3px;
+    border-radius: 15px;
+    background-color: var(--inactive-toggle-color);
+    ;
+    width: 100%;
+    transition: 0.3s background-color linear;
+}
+
+.toggle-switch-inner {
+    position: relative;
+    left: '0%';
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.toggle-switch-inner:hover {
+    opacity: 0.7;
+}
+
+.toggle-active {
+    background-color: var(--active-toggle-color);
+}
+
+.toggle-switch-image {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-radius: 50%;
+}

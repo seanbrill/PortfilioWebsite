@@ -24,8 +24,28 @@ function Header(props) {
   useEffect(() => {
     if (props.initialLoad) {
       HeaderAnimation();
+      setNavHome();
     }
   }, []);
+
+  function setAllInactive() {
+    document.querySelectorAll("a.active").forEach((link) => {
+      link.classList.remove("active");
+    });
+  }
+
+  function setNavHome() {
+    let header = document.querySelector("#header");
+    elementUtils.onNodeVisible(
+      header,
+      () => {
+        setAllInactive();
+        document.querySelector("#header-link").classList.add("active");
+        document.querySelector("#header-link-mobile").classList.add("active");
+      },
+      0.5
+    );
+  }
 
   async function HeaderAnimation() {
     let photo = document.querySelector("#photo");
@@ -45,8 +65,6 @@ function Header(props) {
       startingLeft = window.innerWidth / 2 - photo_rect.width / 2 + "px";
       startingRight = window.innerWidth / 2 - bio_rect.width / 2 + "px";
     }
-    console.log("left:", startingLeft);
-    console.log("right:", startingRight);
 
     let callbackDelay = 1000;
 
@@ -54,7 +72,7 @@ function Header(props) {
     elementUtils.moveElement(
       photo,
       moveTime,
-      { left: "-300px" },
+      { left: "-500px" },
       { left: startingLeft },
       () => {
         photo.style.position = "initial";
@@ -66,7 +84,7 @@ function Header(props) {
     elementUtils.moveElement(
       bio,
       moveTime,
-      { right: "-300px" },
+      { right: "-500px" },
       { right: startingRight },
       () => {
         bio.style.position = "initial";
@@ -100,11 +118,10 @@ function Header(props) {
       </div>
       <div id="bio">
         <p>
-          Experienced Full Stack Engineer with a degree in Information Sciences and Technology from
-          Pennsylvania State University. Proficient in Node.js, React/TypeScript, and backend
-          services, with a strong background in Data Structures and knowledge of XR and game
-          development. Currently a Software Engineer II, showcasing consistent expertise in diverse
-          technologies. Excited to apply skills to innovative software engineering projects.
+          Experienced Full Stack Engineer with a degree in Information Sciences and Technology from Pennsylvania State University. Proficient in
+          Node.js, React/TypeScript, and backend services, with a strong background in Data Structures and knowledge of XR and game development.
+          Currently a Software Engineer II, showcasing consistent expertise in diverse technologies. Excited to apply skills to innovative software
+          engineering projects.
         </p>
         {/* quick links */}
         <section id="quick-buttons" className="quick-buttons-section">
@@ -116,20 +133,10 @@ function Header(props) {
           >
             <img src={theme === "light" ? linkedinDark : linkedinLight} alt="Linkedin icon" />
           </button>
-          <button
-            onClick={Github}
-            id="github-quick"
-            className="quick-button"
-            style={{ backgroundColor: theme === "light" ? "black" : "white" }}
-          >
+          <button onClick={Github} id="github-quick" className="quick-button" style={{ backgroundColor: theme === "light" ? "black" : "white" }}>
             <img src={theme === "light" ? githubDark : githubLight} alt="GitHub icon" />
           </button>
-          <button
-            onClick={Resume}
-            id="resume-quick"
-            className="quick-button"
-            style={{ backgroundColor: theme === "light" ? "darkgray" : "white" }}
-          >
+          <button onClick={Resume} id="resume-quick" className="quick-button" style={{ backgroundColor: theme === "light" ? "darkgray" : "white" }}>
             <img src={theme === "light" ? resume_1_light_2 : resume_1} alt="Resume icon" />
           </button>
         </section>

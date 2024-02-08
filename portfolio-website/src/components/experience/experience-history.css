@@ -31,6 +31,7 @@
 
 .graph-body {
     width: 2px;
+    min-height: 75px;
     background-color: var(--experience-graph-color);
 }
 
@@ -52,6 +53,8 @@
 .experience-sub-heading {
     margin: 0;
     margin-top: -5px;
+    margin-bottom: 10px;
+    font-family: 'rubik';
     font-size: 18px;
     font-weight: 300;
 }
@@ -64,6 +67,10 @@
     margin-left: 15px;
     font-size: 14px;
     font-family: 'rubik';
+}
+
+.experience-detail {
+    margin-bottom: 10px;
 }
 
 

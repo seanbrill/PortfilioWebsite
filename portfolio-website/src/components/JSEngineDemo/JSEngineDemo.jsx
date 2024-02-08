@@ -23,7 +23,7 @@ function JSEngineDemo() {
   return (
     <>
       {active ? (
-        <section id="demo-frame" className="demo-frame">
+        <section id="demo-frame" className="demo-frame active-demo">
           <iframe src={"./demo.html"}></iframe>
           <div className="demo-controls">
             <button
@@ -48,7 +48,7 @@ function JSEngineDemo() {
         </section>
       ) : (
         <section className="demo-frame">
-          <img src={thumbnail} alt="JSEngine Thumbanil" />
+          <img className="demo-thumbnail" src={thumbnail} alt="JSEngine Thumbanil" />
           <p className="try-demo-text">Try The Demo</p>
           <button
             onClick={() => {

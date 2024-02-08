@@ -11,12 +11,11 @@ import ResumePage from "./pages/resume/resumePage";
 
 function App() {
   const [initialLoad, setInitialLoad] = useState(true);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   //once per render
   useEffect(() => {
     if (localStorage.getItem("theme") == null) {
-      console.log("initally saving theme preference: " + theme);
       localStorage.setItem("theme", theme);
     }
 
@@ -34,11 +33,23 @@ function App() {
     r.style.setProperty("--secondary", colors.secondary);
     r.style.setProperty("--tertiary", colors.tertiary);
     r.style.setProperty("--navbar", colors.navbar);
+    r.style.setProperty("--nav-link-text-full", colors.navLinkTextFull);
+    r.style.setProperty("--nav-link-text-mobile", colors.navLinkTextMobile);
+    r.style.setProperty("--inactive-toggle-color", colors.toggleInActiveColor);
+    r.style.setProperty("--active-toggle-color", colors.toggleActiveColor);
     r.style.setProperty("--header-background", colors.headerBackground);
     r.style.setProperty("--about-background", colors.aboutBackground);
     r.style.setProperty("--about-header", colors.aboutHeader);
     r.style.setProperty("--about-text", colors.aboutText);
     r.style.setProperty("--resume-text", colors.resumeText);
+    r.style.setProperty("--projects-header", colors.projectsHeader);
+    r.style.setProperty("--project-showcase-background", colors.projectShowcaseBackground);
+    r.style.setProperty(
+      "--project-showcase-button-background",
+      colors.projectShowcaseButtonBackground
+    );
+    r.style.setProperty("--project-showcase-header", colors.projectShowcaseHeader);
+    r.style.setProperty("--project-showcase-description", colors.projectShowcaseDescription);
     r.style.setProperty("--logo-border", colors.logoBorder);
     r.style.setProperty("--nav-name-text", colors.navNameText);
     r.style.setProperty("--nav-position-text", colors.navPositionText);

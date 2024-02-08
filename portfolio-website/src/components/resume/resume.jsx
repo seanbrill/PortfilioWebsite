@@ -3,11 +3,7 @@ import "./resume.css";
 import ExperienceHistory from "../experience/experience-history";
 import { fadeIn, moveElement, onNodeVisible } from "../../utils/elementUtils";
 import { wait } from "../../utils/genericUtils";
-import PercentageCircle from "../percent-circle/percentage-circle";
 import Skill from "../skill/skill";
-import seanPSU from "../../assets/images/sean-psu.png";
-import seanPSU2 from "../../assets/images/sean-psu2.png";
-import seanPSU3 from "../../assets/images/sean-library.png";
 
 function Resume(props) {
   const observers1 = useRef([]);
@@ -31,8 +27,28 @@ function Resume(props) {
       let experience = document.querySelector("#Experience");
       observers1.current.push(onNodeVisible(education, ResumeAnimation));
       observers2.current.push(onNodeVisible(experience, ExperienceAnimation));
+      setNavResume();
     }
   }, []);
+
+  function setAllInactive() {
+    document.querySelectorAll("a.active").forEach((link) => {
+      link.classList.remove("active");
+    });
+  }
+
+  function setNavResume() {
+    let header = document.querySelector("#resume");
+    onNodeVisible(
+      header,
+      () => {
+        setAllInactive();
+        document.querySelector("#experience-link").classList.add("active");
+        document.querySelector("#experience-link-mobile").classList.add("active");
+      },
+      window.innerWidth > 750 ? 0.4 : 0.1
+    );
+  }
 
   async function ResumeAnimation() {
     let summary = document.querySelector("#Summary");
@@ -69,7 +85,6 @@ function Resume(props) {
     //Animate Technical Skills Section
     fadeIn(skills, animationTime, 1, "block");
     moveElement(skills, animationTime, { bottom: "-100px" }, { bottom: "0px" }, () => {
-      console.log("setting skill circle one");
       SkillsAnimation();
     });
   }
@@ -126,9 +141,9 @@ function Resume(props) {
               id={"exp-1"}
               header={"Pennsylvaniya State University"}
               subHeader={"Bachelors of Science, Information Sciences & Technology"}
-              details={["Detail 1"]}
-              start={"2018"}
-              end={"2022"}
+              details={["2018 - 2022", "Deans List"]}
+              // start={"2018"}
+              // end={"2022"}
             />
           </section>
 
@@ -138,9 +153,21 @@ function Resume(props) {
               id={"exp-2"}
               header={"Software Engineer II"}
               subHeader={"Seisan Consulting"}
-              details={["Detail 1", "Detail 2", "Detail 3", "Detail 4", "Detail 5"]}
-              start={"2023"}
-              end={"present"}
+              details={[
+                `Technical lead on an ambitious mobile application currently available on the App Store and Google Play
+                with over 6,000 downloads , 300 DAU, and growing.
+                `,
+                `Building and deploying highly available and scalable REST APIs hosted in AWS and Azure Cloud
+                services. One of these Apis average around 32,000 requests per day and is still growing.
+                `,
+                `Collaborating with project managers, stakeholders, and developers to efficiently scope tasks, delegate
+                work, and engineer software solutions.
+                `,
+                `Overhauling client’s existing .NET applications to enhance backend services and front-end UI/UX.
+                Engineering custom Unity Android plugins for native functionality and Google Sign-In using OAuth.`,
+              ]}
+              // start={"2023"}
+              // end={"present"}
               timeDelay={3000}
             />
 
@@ -148,9 +175,18 @@ function Resume(props) {
               id={"exp-3"}
               header={"Software Engineer"}
               subHeader={"Seisan Consulting"}
-              details={["Detail 1", "Detail 2", "Detail 3", "Detail 4", "Detail 5"]}
-              start={"2022"}
-              end={"2023"}
+              details={[
+                `Specializing in full-stack software engineering for .NET & NodeJs web development, mobile, and game
+                development, including AR and VR experiences.
+                `,
+                `Devising solutions to optimize app bundle sizes to comply with Google Play standards.`,
+                `Leading the development of an ambitious WebXR art gallery project. Oversaw the architecture of a React
+                user interface, a Node.js backend hosted on an AWS EC2 instance, and a WebGL gallery editor/viewer
+                hosted in S3.
+                `,
+              ]}
+              // start={"2022"}
+              // end={"2023"}
               timeDelay={3500}
             />
 
@@ -158,9 +194,14 @@ function Resume(props) {
               id={"exp-4"}
               header={"Computer Science Intern"}
               subHeader={"Seisan Consulting"}
-              details={["Detail 1", "Detail 2", "Detail 3", "Detail 4", "Detail 5"]}
-              start={"2021"}
-              end={"2022"}
+              details={[
+                `Gained hands-on experience with full-stack development in a fast-paced environment.
+                `,
+                `Quickly acquiring proficiency in a multitude of different tech stacks for client applications.`,
+                `Completing assigned tasks without compromising project timelines or coding standards.`,
+              ]}
+              // start={"2021"}
+              // end={"2022"}
               timeDelay={4000}
             />
           </section>
@@ -169,7 +210,7 @@ function Resume(props) {
         <section className="resume-right">
           <div className="resume-right-top">
             {/* Summary */}
-            <div className="resume-summary">
+            {/* <div className="resume-summary">
               <section id="Summary" className="resume-section">
                 <h2 className="resume-section-header">Summary</h2>
                 <p id="summary-text" className="resume-summary-text">
@@ -187,7 +228,7 @@ function Resume(props) {
                   asset for driving innovation and success in software engineering.
                 </p>
               </section>
-            </div>
+            </div> */}
             {/* Skills */}
             <div className="resume-skills">
               <section id="Skills" className="resume-section">

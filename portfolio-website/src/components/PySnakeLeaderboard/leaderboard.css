@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: flex-start;
     overflow-y: auto;
-    background-color: rgb(34 32 35);
+    background-color: var(--project-showcase-background);
     border-radius: 8px;
     margin-left: 5px;
     margin-right: 5px;
@@ -16,7 +16,7 @@
 
 .leaderboard-header {
     font-size: 14px;
-    color: white;
+    color: var(--project-showcase-header);
     font-family: 'rubik';
 }
 
@@ -28,7 +28,8 @@
     align-items: flex-start;
     justify-content: space-between;
     font-family: 'rubik';
-    color: white;
+    color: var(--project-showcase-description);
+    ;
     font-size: 13px;
     text-align: center;
 }
@@ -69,7 +70,7 @@
     cursor: pointer;
 }
 
-.download-button:hover{
+.download-button:hover {
     opacity: 0.5;
 }
 

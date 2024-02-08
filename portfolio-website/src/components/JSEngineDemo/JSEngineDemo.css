@@ -1,5 +1,5 @@
 .demo-frame {
-    height: 100%;
+    height: 350px;
     width: 100%;
     min-width: 100%;
     display: flex;
@@ -10,6 +10,10 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.active-demo {
+    height: 450px;
 }
 
 .full-screen {
@@ -28,6 +32,10 @@
     padding: 0;
     border-radius: 10px;
 
+}
+
+.demo-thumbnail {
+    object-fit: cover;
 }
 
 .demo-frame img {
@@ -88,7 +96,6 @@
     font-family: 'BebasNeue';
     font-size: 25px;
     background-color: #222023;
-    box-shadow: inset 0px 0px 10px 0px black
 }
 
 .demo-controls button:hover {
@@ -98,7 +105,7 @@
 .exit-button {
     width: 90%;
     margin-right: 5px;
-    background-color: #222023;
+    background-color: #c71717 !important;
     color: white;
 
 
@@ -107,6 +114,8 @@
 .full-screen-button {
     width: 10%;
     margin-left: 5px;
+    background-color: darkgray !important;
+
 
 }
 

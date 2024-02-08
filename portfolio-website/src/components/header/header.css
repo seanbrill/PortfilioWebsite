@@ -6,7 +6,8 @@
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
-    background: var(--header-background);
+    background-color: var(--header-background);
+    transition: background-color 0.3s linear;
     min-height: 85vh;
     max-height: 85vh;
 }
@@ -25,7 +26,7 @@
     margin-right: 25px;
     position: absolute;
     top: 150px;
-    left: -300px;
+    left: -500px;
 }
 
 .sean-image {
@@ -45,7 +46,7 @@
     text-align: center;
     position: absolute;
     top: 150px;
-    right: -300px;
+    right: -500px;
     max-height: 400px;
     min-height: 400px;
     display: flex;

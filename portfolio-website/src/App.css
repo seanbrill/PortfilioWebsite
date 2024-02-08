@@ -3,7 +3,7 @@ body {
   background-color: var(--primary);
   font-family: BebasNeue !important;
   transition: color 0.2s linear;
-  transition: background-color 0.3s linear !important;
+  transition: background-color 1s linear !important;
 }
 
 
