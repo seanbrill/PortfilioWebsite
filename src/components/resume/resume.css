@@ -1,0 +1,150 @@
+#resume {
+    background-color: var(--primary);
+    transition: background-color 0.3s linear;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 75px;
+    padding-bottom: 150px;
+}
+
+.resume-sections-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 25px;
+}
+
+.resume-experiences {
+    max-width: 33%;
+}
+
+.resume-right {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.resume-right-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.resume-section {
+    position: relative;
+    opacity: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.resume-section-header {
+    font-size: 45px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: var(--resume-text);
+}
+
+.university-header {
+    margin: 0;
+    font-size: 25px;
+    color: var(--resume-text);
+}
+
+.resume-text {
+    font-size: 18px;
+    margin: 0;
+    font-family: 'rubik';
+    margin-bottom: 10px;
+    color: var(--resume-text);
+}
+
+#Skills {}
+
+.skills-container {
+    width: fit-content;
+    margin: auto;
+    display: grid;
+    row-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    /* Three columns with equal width */
+    row-gap: 50px;
+}
+
+
+
+.resume-summary-text {
+    font-family: 'rubik';
+    font-size: 18px;
+    text-align: left;
+    max-height: 390px;
+    overflow-y: auto;
+    opacity: 0;
+    position: relative;
+    color: var(--resume-text);
+}
+
+@media screen and (max-width: 1150px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .resume-summary-text {
+        max-height: 550px;
+    }
+}
+
+
+.sean-psu {
+    width: auto;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 400px;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    opacity: 0;
+    position: relative;
+}
+
+@media screen and (max-width: 750px) {
+
+    .resume-experiences {
+        max-width: 100%;
+    }
+
+    .resume-sections-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume-section {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .resume-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume-right-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+    }
+
+    .resume-summary-text {
+        max-height: none;
+    }
+
+    .sean-psu {
+        width: 100%;
+        background-position: center;
+    }
+}

@@ -1,0 +1,159 @@
+.leaderboard-section {
+    min-height: 350px;
+    min-width: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    background-color: var(--project-showcase-background);
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: inset 1px 0px 10px 2px black;
+}
+
+.leaderboard-header {
+    font-size: 14px;
+    color: var(--project-showcase-header);
+    font-family: 'rubik';
+}
+
+.leaderboard-row {
+    width: 175px;
+    min-height: 25px;
+    margin-bottom: 1px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: 'rubik';
+    color: var(--project-showcase-description);
+    ;
+    font-size: 13px;
+    text-align: center;
+}
+
+.order {
+    width: fit-content;
+}
+
+.name {
+    width: 100px;
+}
+
+.score {
+    width: 25px;
+}
+
+.difficulty {
+    width: 50px;
+    text-align: center;
+}
+
+.download-section {
+    margin-top: auto;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-button {
+    width: 95%;
+    background-color: rgb(212, 167, 22);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    opacity: 0.5;
+}
+
+.preload-text {
+    margin: auto;
+    font-size: 13px;
+    max-width: 75%;
+    text-align: center;
+    color: white;
+    font-family: 'Rubik';
+}
+
+.load-leaderboard-button {
+    width: 98%;
+    max-width: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #d4a716;
+    cursor: pointer;
+    color: white;
+    min-height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: auto;
+    margin-bottom: 2px;
+}
+
+.load-leaderboard-button:hover {
+    opacity: 0.5;
+}
+
+#leaderboard-loader-bg {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#leaderboard-loader {
+    height: 45px;
+    width: 45px;
+    background-color: transparent;
+    border: 5px solid white;
+    border-top: 5px solid lightgray;
+    border-radius: 50%;
+    animation: spin 2s infinite linear;
+}
+
+.leaderboard-list {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 90%;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .leaderboard-section {
+        width: 100%;
+        max-height: 300px;
+        min-height: 0;
+    }
+
+    .leaderboard-row {
+        width: 90%;
+    }
+}

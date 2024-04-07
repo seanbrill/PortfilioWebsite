@@ -1,0 +1,170 @@
+#contact-me-popup {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: -600px;
+    width: 80%;
+    min-height: 300px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    padding: 10px;
+    padding-bottom: 0;
+    background-color: var(--contact-me-bg-color);
+    color: var(--contact-me-text-color);
+    font-family: 'rubik' !important;
+    z-index: 55;
+}
+
+
+.contact-me-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100%;
+}
+
+.mail-icon {
+    height: 45px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.contact-header-text {
+    margin: 0;
+    font-size: 25px;
+}
+
+.contact-field {
+    font-family: inherit;
+    font-size: 15px;
+    height: 25px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--contact-me-bg-color);
+    border: 1px solid var(--contact-me-text-color);
+    ;
+    color: var(--contact-me-text-color);
+
+}
+
+.contact-message {
+    font-family: inherit;
+    font-size: 15px;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 90%;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid var(--contact-me-text-color);
+    ;
+    background-color: var(--contact-me-bg-color);
+    color: var(--contact-me-text-color);
+    resize: none;
+}
+
+.contact-exit-button {
+    position: absolute;
+    right: 20px;
+    bottom: 480px;
+    height: 55px;
+    width: 55px;
+    font-size: 45px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--contact-me-text-color);
+    padding: 10px;
+    color: var(--contact-me-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.contact-exit-button:hover {
+    opacity: 0.5;
+}
+
+.contact-exit-button img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.send-email-button {
+    width: 91%;
+    margin: auto;
+    margin-bottom: 25px;
+    padding: 5px;
+    min-height: 45px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-family: 'Caveat';
+    background-color: #136bc5;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.send-email-button:hover {
+    filter: brightness(1.1);
+}
+
+
+#contact-loader-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 56;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#contact-loader {
+    height: 125px;
+    width: 125px;
+    background-color: transparent;
+    border: 15px solid var(--primary);
+    border-top: 15px solid var(--tertiary);
+    border-radius: 50%;
+    animation: spin 0.5s infinite linear;
+}
+
+.invalid {
+    border: 1px solid red;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .contact-exit-button {
+        height: 35px;
+        width: 35px;
+        font-size: 35px;
+        bottom: 500px;
+        right: 15px;
+    }
+
+}

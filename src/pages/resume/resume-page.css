@@ -1,0 +1,22 @@
+#ResumePage {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100vw;
+    min-height: 150vh;
+    max-height: 150vh;
+    background-color: #525659;
+}
+
+.spacer {
+    height: 100px;
+    width: 100%;
+    display: block;
+}
+
+iframe {
+    min-height: 150vh;
+    height: 150vh;
+    width: 100vw;
+    border: none;
+    overflow: hidden !important;
+}
